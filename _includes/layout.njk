@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js no-svg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>{% if page.url == "/" %}Creatieve Therapie Antwerpen – Groepspraktijk voor ervaringsgerichte psychotherapie{% else %}{{ title }} – Creatieve Therapie Antwerpen{% endif %}</title>
+<link rel="stylesheet" href="/assets/css/block-library.css">
+<link rel="stylesheet" href="/assets/css/block-library-theme.css">
+<link rel="stylesheet" href="/assets/fonts/font-libre-franklin.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/blocks.css">
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery-migrate.min.js"></script>
+</head>
+<body class="{{ bodyClass }} wp-embed-responsive has-header-image colors-light">
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+	<header id="masthead" class="site-header">
+		<div class="custom-header">
+			<div class="custom-header-media">
+				<div id="wp-custom-header" class="wp-custom-header"><img src="/images/2026/01/27-1.jpg" width="556" height="1304" alt="Creatieve Therapie Antwerpen"></div>
+			</div>
+			<div class="site-branding">
+				<div class="wrap">
+					<div class="site-branding-text">
+						{% if page.url == "/" %}<h1 class="site-title"><a href="/" rel="home">Creatieve Therapie Antwerpen</a></h1>{% else %}<p class="site-title"><a href="/" rel="home">Creatieve Therapie Antwerpen</a></p>{% endif %}
+						<p class="site-description">Groepspraktijk voor ervaringsgerichte psychotherapie</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="navigation-top">
+			<div class="wrap">
+				<nav id="site-navigation" class="main-navigation" aria-label="Top Menu">
+					<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
+						<svg class="icon icon-bars" aria-hidden="true" role="img"> <use href="#icon-bars" xlink:href="#icon-bars"></use> </svg><svg class="icon icon-close" aria-hidden="true" role="img"> <use href="#icon-close" xlink:href="#icon-close"></use> </svg>Menu
+					</button>
+					<div class="menu-main-container">{% include "menu.html" %}</div>
+					{% if page.url == "/" %}<a href="#content" class="menu-scroll-down"><svg class="icon icon-arrow-right" aria-hidden="true" role="img"> <use href="#icon-arrow-right" xlink:href="#icon-arrow-right"></use> </svg><span class="screen-reader-text">Scroll down to content</span></a>{% endif %}
+				</nav>
+			</div>
+		</div>
+	</header>
+	<div class="site-content-contain">
+		<div id="content" class="site-content">
+			<div class="wrap">
+{{ content | safe }}
+			</div>
+		</div>
+		<footer id="colophon" class="site-footer">
+			<div class="wrap"></div>
+		</footer>
+	</div>
+</div>
+<script>
+var twentyseventeenScreenReaderText = {"quote":"<svg class=\"icon icon-quote-right\" aria-hidden=\"true\" role=\"img\"> <use href=\"#icon-quote-right\" xlink:href=\"#icon-quote-right\"><\/use> <\/svg>","expand":"Expand child menu","collapse":"Collapse child menu","icon":"<svg class=\"icon icon-angle-down\" aria-hidden=\"true\" role=\"img\"> <use href=\"#icon-angle-down\" xlink:href=\"#icon-angle-down\"><\/use> <span class=\"svg-fallback icon-angle-down\"><\/span><\/svg>"};
+</script>
+<script src="/assets/js/global.js"></script>
+<script src="/assets/js/navigation.js"></script>
+<script src="/assets/js/jquery.scrollTo.js"></script>
+{% include "svg-icons.svg" %}
+</body>
+</html>

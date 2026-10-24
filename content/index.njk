@@ -1,0 +1,23 @@
+---
+layout: layout.njk
+bodyClass: home blog hfeed
+permalink: /
+---
+<header class="page-header">
+	<h2 class="page-title">Posts</h2>
+</header>
+<div id="primary" class="content-area">
+	<main id="main" class="site-main">
+	{% for post in collections.posts | reverse %}
+		<article class="post type-post status-publish format-standard hentry">
+			<header class="entry-header">
+				<div class="entry-meta"><span class="screen-reader-text">Posted on</span> <a href="{{ post.url }}" rel="bookmark"><time class="entry-date published" datetime="{{ post.date.toISOString() }}">{{ post.date | longDate }}</time></a></div>
+				<h3 class="entry-title"><a href="{{ post.url }}" rel="bookmark">{{ post.data.title }}</a></h3>
+			</header>
+			<div class="entry-content">
+{{ post.content | safe }}
+			</div>
+		</article>
+	{% endfor %}
+	</main>
+</div>

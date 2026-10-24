@@ -1,0 +1,5 @@
+{
+  "layout": "post.njk",
+  "tags": "posts",
+  "bodyClass": "post-template-default single single-post single-format-standard"
+}
