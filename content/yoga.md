@@ -1,0 +1,6 @@
+---
+title: "Yoga"
+permalink: /yoga/
+---
+
+
