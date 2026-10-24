@@ -28,16 +28,18 @@ content/                     Eleventy-input; 1 .md per pagina
   index.njk                  homepage: bloglijst
   images/                    enkel effectief gebruikte afbeeldingen
 _includes/layout.njk         Twenty Seventeen-markup: header, headerfoto, menu, footer
-_data/menu.json              menu-items met kinderen
-assets/                      style.css, blocks.css, js, fonts van Twenty Seventeen (ongewijzigd)
+_includes/page.njk           artikel-markup voor pagina's
+_includes/post.njk           artikel-markup voor berichten
+_includes/menu.html          menu-HTML, overgenomen uit WordPress (geneste <ul>)
+_includes/svg-icons.svg      SVG-sprite van het thema
+assets/                      CSS, JS en fonts van Twenty Seventeen + WP-blokstijlen (ongewijzigd)
 scripts/check-links.js       linkcheck op _site/
 eleventy.config.js
 package.json                 enige dependency: @11ty/eleventy (dev)
-CNAME                        creatievetherapieantwerpen.be
-.github/workflows/deploy.yml build + linkcheck + deploy naar GitHub Pages
+.github/workflows/deploy.yml test + build + linkcheck + deploy naar GitHub Pages
 ```
 
-Eleventy-config: `dir.input = "content"`, includes en data uit de repo-root, `assets/` en `content/images/` als passthrough copy. Uitvoer `_site/` (in `.gitignore`).
+Eleventy-config: `dir.input = "content"`, includes uit de repo-root, `assets/` en `content/images/` als passthrough copy. Uitvoer `_site/` (in `.gitignore`).
 
 ## Layout
 
@@ -45,6 +47,8 @@ Eleventy-config: `dir.input = "content"`, includes en data uit de repo-root, `as
 
 Afwijkingen van "as is":
 - Footer "Proudly powered by WordPress" vervalt (niet meer waar).
+- Byline "by admin" op het bericht vervalt (linkt naar een auteursarchief dat niet meegaat).
+- `srcset` op afbeeldingen vervalt; elke afbeelding gebruikt het bestand dat nu in `src` staat.
 - Weggelaten WordPress-onderdelen: RSS-feeds, reacties, zoeken, auteur/datum/categorie-archieven, `wp-json`, `xmlrpc.php`, emoji-script, wp-embed.
 
 ## Migratie (eenmalig, niet in de repo)
@@ -58,13 +62,15 @@ Script in de scratchpad, draait één keer:
 
 Alle 27 pagina's gaan mee, ook leeg/dubbel, zodat elke bestaande URL blijft werken.
 
-Het menu wordt overgenomen uit de gerenderde `#site-navigation` van de homepage naar `_data/menu.json`.
+Het menu wordt overgenomen uit de gerenderde `#top-menu` van de homepage naar `_includes/menu.html` (WordPress-ids en -classes weggefilterd, behalve `menu-item` en `menu-item-has-children`).
 
 ## Bouwen en publiceren
 
 - `npm start`: lokale preview met live reload.
-- `npm run build`: bouwt naar `_site/` en draait daarna `scripts/check-links.js`.
-- GitHub Action bij push naar `main`: `npm ci`, `npm run build`, deploy via `actions/upload-pages-artifact` + `actions/deploy-pages`.
+- `npm run build`: bouwt naar `_site/`. `npm run check`: linkcheck op `_site/`. `npm test`: test van de linkcheck.
+- GitHub Action bij push naar `main`: `npm ci`, `npm test`, `npm run build`, `npm run check`, deploy via `actions/upload-pages-artifact` + `actions/deploy-pages`.
+- Eigen domein wordt ingesteld in Settings → Pages (een `CNAME`-bestand is bij deploy via Actions niet nodig). Pages aanzetten vereist admin-rechten op de repo.
+- Omdat links absoluut zijn (`/tarief/`), werkt de site niet onder `esthertherapie-dotcom.github.io/creatievetherapie-website/`; controle vóór de DNS-omschakeling gebeurt lokaal.
 - Publieke GitHub-repo (vereist voor gratis GitHub Pages). Het aanmaken van de repo en de eerste push gebeuren pas na bevestiging van de eigenaar.
 - DNS-omschakeling is de laatste stap en gebeurt door de eigenaar bij de registrar: A-records naar GitHub Pages, daarna "Enforce HTTPS" aanzetten. Vóór het opzeggen van de oude hosting controleren of er geen mail (MX) via loopt.
 
@@ -74,21 +80,25 @@ Het menu wordt overgenomen uit de gerenderde `#site-navigation` van de homepage 
 - Na de migratie: per pagina titel, tekst (genormaliseerd) en aantal afbeeldingen vergelijken met de live site.
 - Visuele vergelijking: door de eigenaar, oude site naast `npm start`.
 
-## Fase 2: bekende fouten (elk een aparte commit)
+## Fase 2: fouten oplossen (beslist 2026-10-24, elk een aparte commit)
 
-| Pagina | Probleem |
-|---|---|
-| Praktisch (`/hoe/`) | e-maillink zonder `mailto:` |
-| Tarief (`/tarief/`) | link-URL is tekst ("http:// de terugbetalingsvoorwaarden…") |
-| Therapie (`/psychotherapie/`) | link naar `wp-admin/post.php?post=91` |
-| Esther De Clercq | slug `/vanaf-april-2022-charlotte-cornelis/` |
-| Idalie Samad | slug `/vanaf-midden-april-2024-idalie-samad/` |
-| Beeldende therapie | 3 versies: `/beeldende-therapie/`, `/beeldende-therapie-2/`, `/http-creatievetherapieantwerpen-be-wp-admin-post-phppost91actionedit/` |
-| Yoga, Dans- en bewegingstherapie, Dramatherapie | dubbele `-2`-pagina's |
-| Lege pagina's | `dans-en-bewegingstherapie-2`, `welzijn`, `groepsaanbod`, `individueel`, `yoga-therapie`, `yoga-2`, `yoga` |
-| Nieuwsbericht | datum in het Engels |
+| Pagina | Probleem | Oplossing |
+|---|---|---|
+| Praktisch (`/hoe/`) | e-maillink zonder `mailto:` | `mailto:creatievetherapieantwerpen@gmail.com` |
+| Tarief (`/tarief/`) | link-URL is tekst ("http:// de terugbetalingsvoorwaarden…") | `https://www.vindeentherapeut.be/info/terugbetaling-psychotherapie.html` |
+| Therapie (`/psychotherapie/`) | link naar `wp-admin/post.php?post=91` | `/beeldende-therapie/` (zoals het menu) |
+| Esther De Clercq | slug `/vanaf-april-2022-charlotte-cornelis/` | `/esther-de-clercq/` + doorverwijzing |
+| Idalie Samad | slug `/vanaf-midden-april-2024-idalie-samad/` | `/idalie-samad/` + doorverwijzing |
+| Hele site | thema-teksten en datums in het Engels | Nederlands: `lang="nl-BE"`, "Nieuws", "16 september 2026", "Naar de inhoud springen", … |
 
-Inhoudelijke keuzes (welke versie blijft, wat met lege pagina's) beslist de eigenaar. Gewijzigde URL's krijgen een doorverwijspagina (`<meta http-equiv="refresh">` + `rel="canonical"`), omdat GitHub Pages geen server-redirects kent.
+Gewijzigde URL's krijgen een doorverwijspagina (`<meta http-equiv="refresh">` + `rel="canonical"`), omdat GitHub Pages geen server-redirects kent.
+
+## Open punten (later, op beslissing van de eigenaar)
+
+- Lege pagina's achter menu-items: Team → Esther Huybrechts → "Dans- en bewegingstherapie" (`/dans-en-bewegingstherapie-2/`), Team → Rosana Pinheiro → "Yoga" en Therapie → "Yoga" (`/yoga-2/`).
+- Nergens gelinkte pagina's: leeg — `welzijn`, `groepsaanbod`, `individueel`, `yoga`, `yoga-therapie`; met tekst — `online-hulpverlening`, `workshops-trainings-en-groepservaring-op-maat`, oude kopie van Beeldende therapie (`/http-creatievetherapieantwerpen-be-wp-admin-post-phppost91actionedit/`).
+- Drie versies van Beeldende therapie (`/beeldende-therapie/`, `/beeldende-therapie-2/` van Julie, en de oude kopie).
+- Op Tarief linkt "gedeeltelijke terugbetaling" in twee stukken naar twee verschillende sites ("ge" → een.be, "deeltelijke terugbetaling" → vindeentherapeut.be).
 
 ## Buiten scope
 
