@@ -1,0 +1,14 @@
+{
+  "name": "creatievetherapie-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "check": "node scripts/check-links.js _site",
+    "test": "node --test scripts/check-links.test.js"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.7"
+  }
+}
