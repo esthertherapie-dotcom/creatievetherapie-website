@@ -1,6 +1,7 @@
 ---
 title: "Rosana Pinheiro"
 permalink: /rosana-pinheiro/
+featuredImage: /images/2020/04/22728738_10154708814341595_5882062627094080959_n-e1586801181792.jpg
 ---
 
 **Contact:** e-mail: therapie.rosana@gmail.com // gsm: 0487 990 445

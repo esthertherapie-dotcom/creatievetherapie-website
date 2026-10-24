@@ -28,6 +28,8 @@ Basisopleiding, Developmental Transformations (DvT) (2023-2024)
 Intrapsychische opstellingen, Vidende (2024)  
 Psychodrama, Moira Verhofstadt (2025-2026)
 
+<p></p>
+
 **Beroepsvereniging:** 
 
 BVCT-ABAT vzw – Belgische Vereniging voor Creatieve Therapie – Association Belge d’Art Thérapies

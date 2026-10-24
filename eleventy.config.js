@@ -1,4 +1,9 @@
+// Twenty Seventeen kleurt menu-items van de huidige pagina grijs (.current-menu-item > a).
+export const markCurrent = (menu, url) =>
+  menu.replaceAll(`"><a href="${url}">`, ` current-menu-item"><a href="${url}" aria-current="page">`);
+
 export default function (eleventyConfig) {
+  eleventyConfig.addFilter("markCurrent", markCurrent);
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("content/images");
   eleventyConfig.addGlobalData("layout", "page.njk");

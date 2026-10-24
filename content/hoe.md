@@ -13,4 +13,6 @@ Een sessie duurt 60 minuten. Indien de sessies meer tijd in beslag nemen (bijvoo
 
 De terugbetalingsmodaliteiten worden bepaald door de mutualiteiten. Vraag meer informatie aan uw therapeut en aan uw ziekenfonds.
 
+<p></p>
+
 _Heb jij een vraag met betrekking tot een vorming, workshop of project? Laat het ons weten, en we bekijken de mogelijkheden!_

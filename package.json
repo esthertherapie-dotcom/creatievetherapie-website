@@ -6,7 +6,7 @@
     "start": "eleventy --serve",
     "build": "eleventy",
     "check": "node scripts/check-links.js _site",
-    "test": "node --test scripts/check-links.test.js"
+    "test": "node --test scripts/*.test.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.7"

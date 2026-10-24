@@ -9,11 +9,12 @@ Als je vragen hebt of meer informatie wil winnen kan je vrijblijvend contact opn
 
 Indien je onze therapeuten persoonlijk wil contacteren en/ of een afspraak wil maken zie hier hun contactgegevens:
 
-  
-**[Esther Huybrechts](/esther-huybrechts/)** | esther.groenstraat@gmail.com | 0476.22.66.67  
+<br>**[Esther Huybrechts](/esther-huybrechts/)** | esther.groenstraat@gmail.com | 0476.22.66.67  
 
 **[Leoni Murphy](/vanaf-april-2022-charlotte-cornelis/)** | [leoni.therapie@hotmaill.com](mailto:leoni.therapie@hotmaill.com) | 0495 60 14 02
 
 **[Idalie Samad](/vanaf-midden-april-2024-idalie-samad/)** | idalie.therapie@gmail.com
 
 **[Rosana Pinheiro](/rosana-pinheiro/)** | therapie.rosana@gmail.com | 0487.99.04.45
+
+<p></p>

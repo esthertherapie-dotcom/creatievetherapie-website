@@ -22,3 +22,5 @@ Als je wil weten of, hoe en welke therapie iets voor jou is, neem je best contac
 -   weerbarheid & assertiviteit
 -   rouw
 -   ….
+
+<p></p>

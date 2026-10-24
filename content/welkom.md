@@ -10,3 +10,5 @@ Bij Creatieve Therapie Antwerpen werken we ervaringsgericht: we vertrekken niet 
 We bieden een warme en veilige plek waar ruimte is om te ontdekken, te voelen en nieuwe stappen te zetten.
 
 Ieder van ons heeft zich gespecialiseerd in een creatief medium. Bekijk zeker eens ons aanbod om meer zicht te krijgen op wie we zijn en wat we aanbieden.
+
+<p></p>

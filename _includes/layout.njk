@@ -36,12 +36,14 @@
 					<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
 						<svg class="icon icon-bars" aria-hidden="true" role="img"> <use href="#icon-bars" xlink:href="#icon-bars"></use> </svg><svg class="icon icon-close" aria-hidden="true" role="img"> <use href="#icon-close" xlink:href="#icon-close"></use> </svg>Menu
 					</button>
-					<div class="menu-main-container">{% include "menu.html" %}</div>
+					{% set menu %}{% include "menu.html" %}{% endset %}
+					<div class="menu-main-container">{{ menu | markCurrent(page.url) | safe }}</div>
 					{% if page.url == "/" %}<a href="#content" class="menu-scroll-down"><svg class="icon icon-arrow-right" aria-hidden="true" role="img"> <use href="#icon-arrow-right" xlink:href="#icon-arrow-right"></use> </svg><span class="screen-reader-text">Scroll down to content</span></a>{% endif %}
 				</nav>
 			</div>
 		</div>
 	</header>
+	{% if featuredImage %}<div class="single-featured-image-header"><img src="{{ featuredImage }}" alt=""></div>{% endif %}
 	<div class="site-content-contain">
 		<div id="content" class="site-content">
 			<div class="wrap">

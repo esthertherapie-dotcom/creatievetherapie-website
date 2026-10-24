@@ -7,6 +7,8 @@ permalink: /dans-en-bewegingstherapie/
 
 **\_ Bonnie Bainbridge Cohen**
 
+<p></p>
+
 **Wat is Dans-en bewegingstherapie (DMT)?**
 
 Dans- en bewegingstherapie is een holistische psychotherapeutische aanpak met de focus op verkenning van lichaam en zijn bewegingen om positieve veranderingen voor het individu te bevorderen.
