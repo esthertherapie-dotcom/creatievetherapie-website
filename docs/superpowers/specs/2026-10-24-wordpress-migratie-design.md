@@ -95,7 +95,7 @@ Gewijzigde URL's krijgen een doorverwijspagina (`<meta http-equiv="refresh">` + 
 
 ## Open punten (later, op beslissing van de eigenaar)
 
-- Lege pagina's achter menu-items: Team → Esther Huybrechts → "Dans- en bewegingstherapie" (`/dans-en-bewegingstherapie-2/`), Team → Rosana Pinheiro → "Yoga" en Therapie → "Yoga" (`/yoga-2/`).
+- Lege pagina's achter menu-items: Team → Rosana Pinheiro → "Yoga" en Therapie → "Yoga" (`/yoga-2/`).
 - Nergens gelinkte pagina's: leeg — `welzijn`, `groepsaanbod`, `individueel`, `yoga`, `yoga-therapie`; met tekst — `online-hulpverlening`, `workshops-trainings-en-groepservaring-op-maat`, oude kopie van Beeldende therapie (`/http-creatievetherapieantwerpen-be-wp-admin-post-phppost91actionedit/`).
 - Drie versies van Beeldende therapie (`/beeldende-therapie/`, `/beeldende-therapie-2/` van Julie, en de oude kopie).
 - Op Tarief linkt "gedeeltelijke terugbetaling" in twee stukken naar twee verschillende sites ("ge" → een.be, "deeltelijke terugbetaling" → vindeentherapeut.be).
