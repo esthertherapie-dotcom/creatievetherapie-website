@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" class="no-js no-svg">
+<html lang="nl-BE" class="no-js no-svg">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
 </head>
 <body class="{{ bodyClass }} wp-embed-responsive has-header-image colors-light">
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+	<a class="skip-link screen-reader-text" href="#content">Naar de inhoud springen</a>
 	<header id="masthead" class="site-header">
 		<div class="custom-header">
 			<div class="custom-header-media">
@@ -32,13 +32,13 @@
 		</div>
 		<div class="navigation-top">
 			<div class="wrap">
-				<nav id="site-navigation" class="main-navigation" aria-label="Top Menu">
+				<nav id="site-navigation" class="main-navigation" aria-label="Hoofdmenu">
 					<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
 						<svg class="icon icon-bars" aria-hidden="true" role="img"> <use href="#icon-bars" xlink:href="#icon-bars"></use> </svg><svg class="icon icon-close" aria-hidden="true" role="img"> <use href="#icon-close" xlink:href="#icon-close"></use> </svg>Menu
 					</button>
 					{% set menu %}{% include "menu.html" %}{% endset %}
 					<div class="menu-main-container">{{ menu | markCurrent(page.url) | safe }}</div>
-					{% if page.url == "/" %}<a href="#content" class="menu-scroll-down"><svg class="icon icon-arrow-right" aria-hidden="true" role="img"> <use href="#icon-arrow-right" xlink:href="#icon-arrow-right"></use> </svg><span class="screen-reader-text">Scroll down to content</span></a>{% endif %}
+					{% if page.url == "/" %}<a href="#content" class="menu-scroll-down"><svg class="icon icon-arrow-right" aria-hidden="true" role="img"> <use href="#icon-arrow-right" xlink:href="#icon-arrow-right"></use> </svg><span class="screen-reader-text">Naar de inhoud scrollen</span></a>{% endif %}
 				</nav>
 			</div>
 		</div>
@@ -56,7 +56,7 @@
 	</div>
 </div>
 <script>
-var twentyseventeenScreenReaderText = {"quote":"<svg class=\"icon icon-quote-right\" aria-hidden=\"true\" role=\"img\"> <use href=\"#icon-quote-right\" xlink:href=\"#icon-quote-right\"><\/use> <\/svg>","expand":"Expand child menu","collapse":"Collapse child menu","icon":"<svg class=\"icon icon-angle-down\" aria-hidden=\"true\" role=\"img\"> <use href=\"#icon-angle-down\" xlink:href=\"#icon-angle-down\"><\/use> <span class=\"svg-fallback icon-angle-down\"><\/span><\/svg>"};
+var twentyseventeenScreenReaderText = {"quote":"<svg class=\"icon icon-quote-right\" aria-hidden=\"true\" role=\"img\"> <use href=\"#icon-quote-right\" xlink:href=\"#icon-quote-right\"><\/use> <\/svg>","expand":"Submenu openen","collapse":"Submenu sluiten","icon":"<svg class=\"icon icon-angle-down\" aria-hidden=\"true\" role=\"img\"> <use href=\"#icon-angle-down\" xlink:href=\"#icon-angle-down\"><\/use> <span class=\"svg-fallback icon-angle-down\"><\/span><\/svg>"};
 </script>
 <script src="/assets/js/global.js"></script>
 <script src="/assets/js/navigation.js"></script>
