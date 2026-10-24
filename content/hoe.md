@@ -3,7 +3,7 @@ title: "Praktisch"
 permalink: /hoe/
 ---
 
-Voor algemene vragen of info kan je ons vrijblijvend [mailen.](creatievetherapieantwerpen@gmail.com)  
+Voor algemene vragen of info kan je ons vrijblijvend [mailen.](mailto:creatievetherapieantwerpen@gmail.com)  
 
 Als jij graag een therapie wil starten, neem je contact op met de therapeut van jouw keuze. Dit kan via mail of telefonisch, zie hiervoor de contactgegevens van de therapeut. Vervolgens maak je een afspraak voor een intake en bekijk je samen je hulpvraag en op welke manier therapie iets voor jou kan betekenen. In overleg bespreek je ook de duur en frequentie van de therapie.
 

@@ -13,4 +13,4 @@ Mits **48 uur op voorhand**, kan je een afspraak **kosteloos annuleren**. Daarna
 
 Sommige mutualiteiten voorzien een [ge](https://www.een.be/voor-hetzelfde-geld/wat-betaal-je-voor-een-therapeut)[deeltelijke terugbetaling](https://www.vindeentherapeut.be/info/terugbetaling-psychotherapie.html), neem hiervoor contact op met je ziekenfonds en/of vraag je therapeut of hij een overeenkomst heeft met het respectievelijk ziekenfonds.
 
-Een overzicht van **de terugbetalingsvoorwaarden en bedragen per ziekenfonds** vind je [hier](<http:// de terugbetalingsvoorwaarden en bedragen per ziekenfonds>)
+Een overzicht van **de terugbetalingsvoorwaarden en bedragen per ziekenfonds** vind je [hier](https://www.vindeentherapeut.be/info/terugbetaling-psychotherapie.html)

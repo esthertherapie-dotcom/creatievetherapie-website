@@ -9,7 +9,7 @@ Onze therapeuten zijn gespecialiseerd in verschillende therapie vormen. Je kan j
 
 Voor meer info contacteer je best onze **[therapeuten](/wie/)!**  
 
--   [Beeldende therapie](/wp-admin/post.php?post=91&action=edit)
+-   [Beeldende therapie](/beeldende-therapie/)
 -   [Dans- en bewegingstherapie](/dans-en-bewegingstherapie/)
 -   [Dramatherapie](/dramatherapie-2/)
 -   Sensorimotor Psychotherapie
