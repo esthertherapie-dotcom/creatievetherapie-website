@@ -1,6 +1,6 @@
 ---
 title: "Esther De Clercq"
-permalink: /vanaf-april-2022-charlotte-cornelis/
+permalink: /esther-de-clercq/
 ---
 
 <ul class="wp-block-gallery columns-2 is-cropped"><li class="blocks-gallery-item"><figure><img src="/images/2026/09/Foto-website-creatieve-therapie-2-4-e1789573866396-568x1024.jpg" alt="" class="wp-image-901"></figure></li><li class="blocks-gallery-item"><figure><img src="/images/2026/09/1000088903-2-640x1024.jpg" alt="" class="wp-image-899"></figure></li></ul>

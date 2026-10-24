@@ -1,6 +1,6 @@
 ---
 title: "Idalie Samad"
-permalink: /vanaf-midden-april-2024-idalie-samad/
+permalink: /idalie-samad/
 ---
 
 <figure class="wp-block-image"><img src="/images/2024/11/IMG_4785-1024x683.jpg" alt="" class="wp-image-763"></figure>
