@@ -1,3 +1,5 @@
+import { HtmlBasePlugin } from "@11ty/eleventy";
+
 // Twenty Seventeen kleurt menu-items van de huidige pagina grijs (.current-menu-item > a)
 // en klapt op mobiel de submenu's van hun ouders open (.current-menu-ancestor).
 export function markCurrent(menu, url) {
@@ -15,6 +17,7 @@ export function markCurrent(menu, url) {
 }
 
 export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(HtmlBasePlugin); // zet --pathprefix voor alle /-links (github.io-submap)
   eleventyConfig.addFilter("markCurrent", markCurrent);
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("content/images");
