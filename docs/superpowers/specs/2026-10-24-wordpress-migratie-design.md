@@ -99,6 +99,10 @@ Gewijzigde URL's krijgen een doorverwijspagina (`<meta http-equiv="refresh">` + 
 - Nergens gelinkte pagina's: leeg — `welzijn`, `groepsaanbod`, `individueel`, `yoga`, `yoga-therapie`; met tekst — `online-hulpverlening`, `workshops-trainings-en-groepservaring-op-maat`, oude kopie van Beeldende therapie (`/http-creatievetherapieantwerpen-be-wp-admin-post-phppost91actionedit/`).
 - Drie versies van Beeldende therapie (`/beeldende-therapie/`, `/beeldende-therapie-2/` van Julie, en de oude kopie).
 - Op Tarief linkt "gedeeltelijke terugbetaling" in twee stukken naar twee verschillende sites ("ge" → een.be, "deeltelijke terugbetaling" → vindeentherapeut.be).
+- Contact: "Leoni Murphy" linkt naar de pagina van Esther De Clercq, met e-mail `leoni.therapie@hotmaill.com` (typo?); Esther De Clercq en Julie Jangu staan er niet bij.
+- Telefoonnummer Esther Huybrechts verschilt: Contact `0476.22.66.67`, eigen pagina `0474/52.17.04`.
+- Welkom schrijft "Rosanna" (elders "Rosana").
+- Foto's hebben geen alt-tekst.
 
 ## Buiten scope
 
