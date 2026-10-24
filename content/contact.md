@@ -11,7 +11,7 @@ Indien je onze therapeuten persoonlijk wil contacteren en/ of een afspraak wil m
 
 <br>**[Esther Huybrechts](/esther-huybrechts/)** | esther.groenstraat@gmail.com | 0476.22.66.67  
 
-**[Leoni Murphy](/esther-de-clercq/)** | [leoni.therapie@hotmaill.com](mailto:leoni.therapie@hotmaill.com) | 0495 60 14 02
+**[Esther De Clercq](/esther-de-clercq/)** | esther.therapie@gmail.com
 
 **[Idalie Samad](/idalie-samad/)** | idalie.therapie@gmail.com
 
