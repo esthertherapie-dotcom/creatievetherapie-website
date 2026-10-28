@@ -5,7 +5,11 @@ Je hoeft niets te installeren om de site te onderhouden: alles kan in de browser
 
 ## Waar staat wat
 
-- Pagina's: `content/*.md` — bovenaan `title` en `permalink`, daaronder de tekst in Markdown.
+- Pagina's: `content/<menu>/*.md`, één map per menu-item: `over-ons/`, `team/`, `praktisch/`, `therapie/`.
+  Pagina's die (nog) niet in het menu staan zitten in `niet-in-menu/`.
+  Bovenaan elk bestand staan `title` en `permalink`, daaronder de tekst in Markdown.
+  Het webadres komt uit `permalink`, niet uit de bestandsnaam of map: een bestand verplaatsen
+  of hernoemen verandert de site dus niet.
 - Nieuwsbericht: nieuw bestand in `content/nieuws/` met `title`, `date` (JJJJ-MM-DD) en `permalink`.
 - Menu: `_includes/menu.html`.
 - Afbeeldingen: in `content/images/`, gebruiken als `/images/...`.
