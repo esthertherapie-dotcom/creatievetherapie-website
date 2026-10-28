@@ -1,12 +1,18 @@
 name: Deploy
+# Publiceert main, plus een preview van elke open pull request onder /pr-<nummer>/.
+# pull_request_target draait op main (de Pages-omgeving staat alleen main toe) en bouwt
+# alleen PR's uit deze repo zelf, nooit uit forks.
 on:
   push:
     branches: [main]
+  pull_request_target:
+    types: [opened, reopened, synchronize, closed]
   workflow_dispatch:
 permissions:
   contents: read
   pages: write
   id-token: write
+  pull-requests: write
 concurrency:
   group: pages
   cancel-in-progress: true
@@ -16,8 +22,12 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: main
       - uses: actions/setup-node@v7
         with:
           node-version: lts/*
@@ -30,8 +40,37 @@ jobs:
         uses: actions/configure-pages@v6
       # Zonder eigen domein staat de site onder /<repo>/; met eigen domein is base_path leeg.
       - run: npm run build -- --pathprefix="${{ steps.pages.outputs.base_path }}/"
+      # Een PR die niet bouwt krijgt geen preview, maar houdt de rest niet tegen.
+      - name: Previews van open pull requests
+        env:
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: |
+          for n in $(gh pr list --state open --json number,isCrossRepository --jq '.[] | select(.isCrossRepository | not) | .number'); do
+            dir="$RUNNER_TEMP/pr-$n"
+            if git fetch -q origin "pull/$n/head:pr-$n" && git worktree add -q "$dir" "pr-$n" &&
+               (cd "$dir" && npm ci && npm test && npm run build && npm run check &&
+                npm run build -- --pathprefix="$BASE_PATH/pr-$n/" --output="$GITHUB_WORKSPACE/_site/pr-$n"); then
+              echo "$n ok" >> "$RUNNER_TEMP/previews.txt"
+            else
+              echo "$n fout" >> "$RUNNER_TEMP/previews.txt"
+            fi
+          done
+          touch "$RUNNER_TEMP/previews.txt"
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
       - id: deployment
         uses: actions/deploy-pages@v5
+      - name: Previewlink als reactie op elke PR
+        env:
+          SITE: ${{ steps.pages.outputs.base_url }}
+          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          while read -r n status; do
+            if [ "$status" = ok ]; then
+              body="✅ **Preview van deze wijziging:** $SITE/pr-$n/ (bijgewerkt bij elke nieuwe commit)"
+            else
+              body="❌ Deze wijziging bouwt niet, dus er is geen preview. Details: $RUN"
+            fi
+            gh pr comment "$n" --edit-last --create-if-none --body "$body"
+          done < "$RUNNER_TEMP/previews.txt"
